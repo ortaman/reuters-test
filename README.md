@@ -21,7 +21,8 @@ curl "http://127.0.0.1:8000/casetext_sync/?start_date=2023-05-15&end_date=2023-0
 ```
 
 ### Tests
--  In the app directory run:
+- Install pytest and pytest-mock
+- In the app directory run:
 ```bash
 python -m pytest
 

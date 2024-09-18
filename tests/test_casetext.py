@@ -2,7 +2,7 @@
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.routers.casetext import DMSApi
+from app.reuters.router import DMSApi
 
 
 client = TestClient(app)

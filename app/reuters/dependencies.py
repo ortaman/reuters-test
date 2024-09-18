@@ -1,4 +1,6 @@
 
+from pathlib import Path
+
 
 class DMSApi:
 

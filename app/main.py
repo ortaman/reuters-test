@@ -1,11 +1,11 @@
 
 from fastapi import FastAPI
 
-from .routers import casetext
+from app.reuters import router
 
 
 app = FastAPI()
-app.include_router(casetext.router)
+app.include_router(router.router)
 
 
 @app.get("/")

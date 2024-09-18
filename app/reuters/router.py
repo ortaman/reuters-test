@@ -1,29 +1,13 @@
 
 import pandas as pd
 
-from datetime import date
 from fastapi import APIRouter, Depends
-from pathlib import Path
-from pydantic import BaseModel
+
+from app.reuters.dependencies import DMSApi
+from app.reuters.schemas import DateRange
 
 
 router = APIRouter()
-
-
-class DMSApi:
-
-    def get_files_stored(self, date):
-        """ Simulate the request to DSM API using the files saved"""
-
-        path = Path.cwd() / "tests/dms-responses/" / f"{date}.jsonl"
-        file = open(path, "r")
-
-        return file.read()
-
-
-class DateRange(BaseModel):
-    start_date: date
-    end_date: date
 
 
 @router.get("/casetext_sync/", tags=["casetext"])
