@@ -40,7 +40,7 @@ async def casetext_syncronization(date_range: DateRange = Depends()):
             if row[2] != today_file_stored.iloc[0, 2]:
                 update_files_meta.append({"id": row[0], "meta": today_file_stored.iloc[0, 2]})
             
-        today_files_stored = today_files_stored.drop(today_file_stored.index)
+        today_files_stored.drop(today_file_stored.index, inplace=True)
 
     response = {
         "createFile": today_files_stored.to_dict(orient='records'),
